@@ -34,7 +34,7 @@
 
         Mouse {
             bindings = <
-&posao_login  &mkp MB1   &mkp MB3    &mkp MB2   &sync
+&posao_login  &mkp LCLK  &mkp MCLK   &mkp RCLK  &sync
 &login        &kp LC(C)  &kp LC(F5)  &kp LC(V)  &kp LA(F4)
 &kp C_MUTE    &to 2                  &to 1
             >;
