@@ -15,5 +15,4 @@ jobs:
 
       - name: Build firmware
         run: |
-          west build -d build/cl_studio -b nice_nano_v2 \
-            -S studio-rpc-usb-uart -- -DSHIELD=trk -DCONFIG_ZMK_STUDIO=y
+          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=trk
