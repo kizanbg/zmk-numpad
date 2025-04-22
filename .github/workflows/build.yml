@@ -12,10 +12,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up west
-        uses: zmkfirmware/setup-west-action@main
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          path: .github/actions/setup-west
+          python-version: "3.x"
+
+      - name: Install west
+        run: pip install west
+
+      - name: Initialize west
+        run: west init -l config
+
+      - name: Update west
+        run: west update
+
+      - name: Export zephyr
+        run: west zephyr-export
 
       - name: Build firmware
         run: west build -s zmk/app -d build -b nice_nano_v2 -- -DSHIELD=trk
