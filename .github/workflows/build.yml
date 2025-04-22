@@ -33,7 +33,7 @@ jobs:
         run: west build -s zmk/app -d build -b nice_nano_v2 -- -DSHIELD=trk
 
       - name: Upload firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@3c86c850c7c6c190a6e5fbcf75594233fb371de5
         with:
           name: trk_firmware
           path: build/zephyr/zmk.uf2
