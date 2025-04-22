@@ -1,5 +1,19 @@
-on: [push, pull_request, workflow_dispatch]
+name: Build firmware
+
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup west
+        uses: zmkfirmware/setup-west-action@v1
+
+      - name: Build firmware
+        run: |
+          west build -d build/cl_studio -b nice_nano_v2 \
+            -S studio-rpc-usb-uart -- -DSHIELD=trk -DCONFIG_ZMK_STUDIO=y
