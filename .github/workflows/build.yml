@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up west
-        uses: zmkfirmware/setup-west-action@v1
+        uses: zmkfirmware/setup-west-action@main
 
       - name: Build firmware
         run: west build -s zmk/app -d build -b nice_nano_v2 -- -DSHIELD=trk
