@@ -16,7 +16,9 @@ jobs:
         uses: zmkfirmware/setup-west-action@main
 
       - name: Build firmware
-        run: west build -s zmk/app -d build -b nice_nano_v2 -- -DSHIELD=trk
+        run: |
+          west build -d build/cl_studio -b nice_nano_v2 \
+            -S studio-rpc-usb-uart -- -DSHIELD=trk -DCONFIG_ZMK_STUDIO=y
 
       - name: Upload firmware
         uses: actions/upload-artifact@v2
