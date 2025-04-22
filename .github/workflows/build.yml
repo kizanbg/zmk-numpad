@@ -14,6 +14,8 @@ jobs:
 
       - name: Set up west
         uses: zmkfirmware/setup-west-action@main
+        with:
+          path: .github/actions/setup-west
 
       - name: Build firmware
         run: west build -s zmk/app -d build -b nice_nano_v2 -- -DSHIELD=trk
