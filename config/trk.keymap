@@ -32,7 +32,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        Mouse {
+        Mouse1 {
             bindings = <
 &kp LEFT_SHIFT  &mkp LCLK  &msc SCRL_UP    &mkp RCLK  &kp LC(F5)
 &kp LCTRL       &kp LC(C)  &msc SCRL_DOWN  &kp LC(V)  &mkp MCLK
